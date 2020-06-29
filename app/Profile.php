@@ -14,4 +14,9 @@ class Profile extends Model
     protected $fillable = [
         'date_of_birth', 'gender', 'position', 'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
