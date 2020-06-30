@@ -17,4 +17,15 @@ class ProfileController extends Controller
     {
         return view('profiles.show', ['user' => $user]);
     }
+
+    /**
+     * Show the edit for the given user.
+     *
+     * @param  User $user
+     * @return View
+     */
+    public function edit(User $user)
+    {
+        return view('profiles.edit', ['user' => $user]);
+    }
 }
