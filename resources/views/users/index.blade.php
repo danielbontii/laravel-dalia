@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center w-100">
     <div class="col-md-10">
         <table class="table">
             <thead>
@@ -20,8 +20,13 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->position }}</td>
                 <td>
-                    <a href="{{ route('profiles.show', ['user' => $user->id]) }}" class="btn btn-link" >Edit</a>
-                    <a class="btn btn-link">Make admin</a>
+                    <a href="{{ route('profiles.show', ['user' => $user->id]) }}" class="btn btn-primary" >Details</a>
+                    @if (Auth::id() === $user->id)
+                    <a href="{{ route('profiles.edit', ['user' => $user->id]) }}" class="btn btn-secondary" >Edit</a>
+                    @endif
+                    @if (Auth::user()->role === 'admin' &&  $user->role !== 'admin')
+                    <a class="btn btn-success">Make admin</a>
+                    @endif
                 </td>
             </tr>
             @endforeach
