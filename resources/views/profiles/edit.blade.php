@@ -18,7 +18,7 @@
 
       <div class="form-group">
         <label for="role">Role</label>
-        <select class="form-control" id="role" name="role" >
+        <select class="form-control" id="role" name="role" readonly>
           <option value="admin" {{ $user->role === 'admin' ? 'selected': ''}}>Admin</option>
           <option value="worker" {{ $user->role === 'worker' ? 'selected': ''}}>Worker</option>
         </select>
