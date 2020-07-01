@@ -62,7 +62,7 @@ class ActivityController extends Controller
      */
     public function show(Activity $activity)
     {
-        //
+        return view('activities.show', ['activity' => $activity]);
     }
 
     /**
