@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateProfile;
-use Illuminate\Http\Request;
 use App\User;
 
 class ProfileController extends Controller
 {
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Show the profile for the given user.
      *
