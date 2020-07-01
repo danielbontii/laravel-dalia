@@ -2,6 +2,9 @@
 
 @section('content')
 
+<h3 class="display-3 text-center mb-3">Edit profile</h3>
+
+
 <div class="d-flex justify-content-center w-100 row">
 <form class="col-md-6" action="{{ route('profiles.update', ['user' => $user->id]) }}" method="POST">
         @method('PATCH')

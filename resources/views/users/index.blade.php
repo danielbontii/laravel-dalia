@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<h3 class="display-3 text-center mb-3">All users</h3>
 
 <div class="row d-flex justify-content-center w-100">
     <div class="col-md-10">

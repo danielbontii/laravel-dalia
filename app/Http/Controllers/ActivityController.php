@@ -22,11 +22,13 @@ class ActivityController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
-        //
+        $activities = Activity::paginate();
+
+        return view('activities.index', ['activities' => $activities]);
     }
 
     /**
