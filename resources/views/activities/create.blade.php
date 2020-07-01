@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<h3 class="display-3 text-center mb-3">Create an activity</h3>
 
 <div class="d-flex justify-content-center w-100 row">
     <form class="col-md-6" action="{{ route('activities.store') }}" method="POST">
