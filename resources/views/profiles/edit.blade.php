@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="d-flex justify-content-center w-100 row">
-    <form class="col-md-6" action="" method="POST">
+<form class="col-md-6" action="{{ route('profiles.update', ['user' => $user->id]) }}" method="POST">
         @method('PATCH')
         @csrf
       <div class="form-group">

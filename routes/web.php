@@ -23,3 +23,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/profile/{user}', 'ProfileController@show')->name('profiles.show');
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profiles.edit');
+Route::patch('/profile/{user}', 'ProfileController@update')->name('profiles.update');
