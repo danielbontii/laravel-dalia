@@ -72,7 +72,7 @@ class RegisterController extends Controller
         ]);
 
         Profile::create([
-            'userId' => $user->id
+            'user_id' => $user->id
         ]);
 
         return $user;
