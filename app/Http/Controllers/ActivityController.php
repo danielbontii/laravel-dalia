@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Activity;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Validator;
 
 class ActivityController extends Controller
 {
@@ -38,7 +40,18 @@ class ActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|max:255',
+            'details' => 'required',
+        ]);
+
+        $activity = Activity::create([
+            'title' => $validated['title'],
+            'details' => $validated['details'],
+            'creator_id' => Auth::id(),
+        ]);
+
+        return redirect()->route('activities.show', ['activity' => $activity->id]);
     }
 
     /**
