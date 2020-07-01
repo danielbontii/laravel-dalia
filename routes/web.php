@@ -26,3 +26,4 @@ Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profiles.edi
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profiles.update');
 
 Route::get('/users', 'UserController@index')->name('users.index');
+Route::get('/users/{user}/toggle-role', 'UserController@toggleRole')->name('users.toggleRole');
