@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateProfile extends FormRequest
@@ -13,7 +14,7 @@ class UpdateProfile extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,17 @@ class UpdateProfile extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'role' => [
+                'required',
+                Rule::in(['admin', 'worker']),
+            ],
+            'date_of_birth' => 'nullable|date',
+            'gender' => [
+                'nullable',
+                Rule::in(['male', 'female']),
+            ],
+            'position' => 'nullable|string|max:255',
         ];
     }
 }

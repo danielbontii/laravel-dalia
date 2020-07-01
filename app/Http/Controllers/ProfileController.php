@@ -37,13 +37,12 @@ class ProfileController extends Controller
      * @param  User $user
      * @return Response
      */
-    public function update(UpdateProfile $request, $user)
+    public function update(UpdateProfile $request, User $user)
     {
         $validated = $request->validated();
 
         $user->update([
             'name' => $validated['name'] ?? $user->name,
-            'email' => $validated['email'] ?? $user->email,
             'role' => $validated['role'] ?? $user->role,
         ]);
 
@@ -53,6 +52,6 @@ class ProfileController extends Controller
             'position' => $validated['position'] ?? $user->profile->position,
         ]);
 
-        return redirect()->route('profiles.show');
+        return redirect()->route('profiles.show', ['user' => $user->id]);
     }
 }
