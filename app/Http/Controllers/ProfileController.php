@@ -59,6 +59,7 @@ class ProfileController extends Controller
             'date_of_birth' => $validated['date_of_birth'] ?? $user->profile->date_of_birth,
             'gender' => $validated['gender'] ?? $user->profile->gender,
             'position' => $validated['position'] ?? $user->profile->position,
+            'telephone' => $validated['telephone'] ?? $user->profile->telephone,
         ]);
 
         return redirect()->route('profiles.show', ['user' => $user->id]);

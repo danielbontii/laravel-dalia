@@ -36,6 +36,7 @@ class UpdateProfile extends FormRequest
                 Rule::in(['male', 'female']),
             ],
             'position' => 'nullable|string|max:255',
+            'telephone' => 'nullable|string|max:15',
         ];
     }
 }

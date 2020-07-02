@@ -40,26 +40,22 @@
     </style>
 
 @section('content')
-{{-- <h2 style="text-align:center">User Profile Card</h2> --}}
 
-<div class="text-center w-100">
-    <img class="img-fluid rounded" src="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" alt="Avatar" width="100">
-</div> <br/>
 <div class="card">
   <h1>{{ $user->name }}</h1>
-  <p class="title">Role here</p>
+  <p class="title">{{ $user->profile->position }}</p>
 <div class="row text-left">
     <div class="col">
         <label for="gender">Gender</label>
-        <input type="text" value=" Gender here" disabled>
+        <input type="text" value="{{ $user->profile->gender }}" disabled>
     </div>
     <div class="col">
-        <label for="age">Gender</label>
-        <input type="text" value=" Age here" disabled>
+        <label for="date of birth">Date of birth</label>
+        <input type="text" value=" {{ $user->profile->date_of_birth }}" disabled>
     </div>
     <div class="col ">
         <label for="Phone">Phone Number</label>
-        <input type="text" value=" Phone Number here" disabled>
+        <input type="text" value=" {{ $user->profile->telephone }}" disabled>
     </div>
 </div> <br/>
 

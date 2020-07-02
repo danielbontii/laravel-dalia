@@ -20,6 +20,11 @@
       </div>
 
       <div class="form-group">
+        <label for="telephone">Telephone</label>
+        <input type="tel" class="form-control" id="telephone" name="telephone" value="{{ $user->profile->telephone }}">
+      </div>
+
+      <div class="form-group">
         <label for="role">Role</label>
         <select class="form-control" id="role" name="role" readonly>
           <option value="admin" {{ $user->role === 'admin' ? 'selected': ''}}>Admin</option>
